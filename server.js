@@ -25,18 +25,18 @@ var server = http.createServer(function(request, response){
   if(path == '/'){
     response.setHeader('Content-Type', 'text/html; charset=utf-8')
     response.write('<!DOCTYPE>' + 
-    '<head> <link rel="stylesheet" href="/style"></head>' + 
+    '<head> <link rel="stylesheet" href="/style.css"></head>' + 
     '<body><div class="shake">網絡一線牽 珍惜這段緣</div>' +
-    '<script src="/script"></script> ' +
+    '<script src="/main.js"></script> ' +
     '</body>')
     response.end()	
-  }else if(path == '/style'){
+  }else if(path == '/style.css'){
     response.setHeader('Content-Type', 'text/css; charset=utf-8')
     response.write('body{background-color: pink;}' + 
     '@-webkit-keyframes shake {0%{-webkit-transform:translate(2px, 2px);}25%{-webkit-transform:translate(-2px, -2px);}50%{-webkit-transform:translate(0px, 0px);}75%{-webkit-transform:translate(2px, -2px);}100%{-webkit-transform:translate(-2px, 2px);}}@keyframes shake {0%{transform:translate(2px, 2px);}25%{transform:translate(-2px, -2px);}50%{transform:translate(0px, 0px);}75%{transform:translate(2px, -2px);}100%{transform:translate(-2px, 2px);}}.shake{position: relative;top: 30px;left: 100px;width: 200px;color: #1589F5;content-heigh:80px;}.shake:hover{-webkit-animation:shake 0.2s infinite;animation:shake 0.2s infinite;}'
     )
     response.end()
-  }else if(path == '/script') {
+  }else if(path == '/main.js') {
     response.setHeader('Content-Type','text/javascript; charset=utf-8')
     response.write('alert("测试")')
     response.end()
